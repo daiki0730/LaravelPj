@@ -10,7 +10,9 @@
 @section('content')
   <p>本文のコンテンツ</p>
 
-  @include('components.message',['msg_title'=>'OK','msg_content'=>'サブビューです'])
+  <ul>
+  @each('components.item',$data,'item')
+  </ul>
 
 @endsection
 
