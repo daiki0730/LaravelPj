@@ -18,4 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('hello','HelloController@index')->middleware('helo');
-Route::post('hello','HelloController@index')
+Route::post('hello','HelloController@post');
