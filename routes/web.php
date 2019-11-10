@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// use App\Http\Middleware\HelloMiddleware;
+
+use App\Http\Middleware\HelloMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
