@@ -19,6 +19,6 @@ class HelloController extends Controller
         'mail' => 'email',
         'age' => 'numeric|between:0,150',
       ];
-
+      $this->validate($request, $validate_true);
     }
 }
