@@ -14,6 +14,11 @@ class HelloController extends Controller
 
     public function post(Request $request)
     {
+      $validate_true = [
+        'name' => 'required',
+        'mail' => 'email',
+        'age' => 'numeric|between:0,150',
+      ];
 
     }
 }
