@@ -11,4 +11,9 @@ class HelloController extends Controller
     {
       return view('hello.index');
     }
+
+    public function post(Request $request)
+    {
+
+    }
 }
