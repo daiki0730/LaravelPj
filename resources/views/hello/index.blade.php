@@ -11,7 +11,7 @@
   <p>本文のコンテンツ</p>
   <table>
   @foreach ($data as $item)
-  <tr><tr>{{$item['name']}}</tr><td>{{$item['mail']}}</td></tr>
+  <tr><th>{{$item['name']}}</th><td>{{$item['mail']}}</td></tr>
   @endforeach
   </table>
 @endsection
