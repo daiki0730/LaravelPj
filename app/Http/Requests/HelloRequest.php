@@ -20,6 +20,9 @@ class HelloRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0,150',
         ];
     }
 }
