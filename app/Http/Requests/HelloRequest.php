@@ -9,13 +9,17 @@ class HelloRequest extends FormRequest
 
     public function authorize()
     {
-        return false;
+        if ($this->path() == 'hello')
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function rules()
     {
         return [
-            //
         ];
     }
 }
