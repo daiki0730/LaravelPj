@@ -21,5 +21,10 @@ class HelloController extends Controller
         'mail' => 'email',
         'age' => 'numeric|between:0,150',
       ]);
+      if ($validator->fails()) {
+        return redirect('/hello')
+                        ->withErrors($validator)
+                        ->withInput();
+      }
     }
 }
