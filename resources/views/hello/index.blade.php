@@ -10,13 +10,7 @@
 @section('content')
   <p>{{ $msg }}</p>
   @if (count($errors) > 0)
-  <div>
-    <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
+  <p>入力に問題があります。</p>
   @endif
   <table>
     <form action="/hello" method="post">
