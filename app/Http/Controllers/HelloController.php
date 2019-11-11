@@ -26,5 +26,7 @@ class HelloController extends Controller
                         ->withErrors($validator)
                         ->withInput();
       }
+
+      return view('hello,index', ['msg'=>'正しく入力されました']);
     }
 }
