@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Validator;
+use Illminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
