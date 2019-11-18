@@ -34,4 +34,10 @@ class HelloController extends Controller
       $response -> cookie('msg', $msg , 100);
       return $response;
     }
+
+  public function add(Request $request)
+  {
+    return view('hello.add');
+  }
+
 }
