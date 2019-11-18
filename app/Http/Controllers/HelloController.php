@@ -50,4 +50,13 @@ class HelloController extends Controller
       DB::insert('insert into people (name, mail, age) values (:name, :mail, :age)', $param);
       return redirect('/hello');
     }
+
+    public function edit(Request $request)
+    {
+        $param = ['id' => $request->id];
+        $item = DB::table('select * from people where id = :id', $param);
+        return view('hello.edit', ['form' => $item[0]]);
+    }
+
+
 }
