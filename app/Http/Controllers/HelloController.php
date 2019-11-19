@@ -49,7 +49,7 @@ class HelloController extends Controller
     {
         $item = DB::table('people')
         ->where('id',$request->id)->first();
-        return view('hello.edit', ['form' => $item);
+        return view('hello.edit', ['form' => $item]);
     }
 
     public function update(Request $request)
