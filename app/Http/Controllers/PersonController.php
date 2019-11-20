@@ -13,4 +13,12 @@ class PersonController extends Controller
         $items = Person::all();
         return view('person.index', ['items' => $items]);
     }
+
+    public function find(Request $request)
+    {
+        return view('person.find', ['input' => '']);
+    }
+
+
+
 }
