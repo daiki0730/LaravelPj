@@ -13,5 +13,6 @@ class Person extends Model
 
     public function scopeNameEqual($query, $str)
     {
+      return $query->where('name',$str);
     }
 }
