@@ -23,6 +23,7 @@ class Person extends Model
 
     public function scopeAgeLessThan()
     {
+        return $query->where('age','<=',$n);
     }
 
 }
