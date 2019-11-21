@@ -13,11 +13,12 @@ class Person extends Model
 
     public function scopeNameEqual($query, $str)
     {
-      return $query->where('name',$str);
+        return $query->where('name',$str);
     }
 
     public function scopeAgeGreaterThan()
     {
+        return $query->where('age','>=',$n);
     }
 
 }
