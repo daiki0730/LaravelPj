@@ -9,7 +9,7 @@
 
 @section('content')
     <table>
-    <tr><th>Data</th></tr>
+    <tr><th>Person</th><th>Data</th></tr>
     @foreach ($items as $item)
         <tr>
             <td>{{$item->getData()}}</td>
