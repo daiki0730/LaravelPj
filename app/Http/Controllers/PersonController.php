@@ -13,7 +13,7 @@ class PersonController extends Controller
         $hasItems = Person::has('boards')->get();
         $noItems = Person::doesntHave('boards')->get();
         $param = ['hasItems' => $hasItems, 'noItems' => $noItems];
-        return view('person.index', '$param');
+        return view('person.index', $param);
     }
 
     public function find(Request $request)
