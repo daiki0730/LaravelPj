@@ -103,7 +103,7 @@ class HelloController extends Controller
     public function ses_put(Request $request)
     {
         $msg = $request->input;
-        $request->session()->put('msg', $msg)
+        $request->session()->put('msg', $msg);
         return view('hello.rest');
     }
 }
