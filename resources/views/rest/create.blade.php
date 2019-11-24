@@ -6,4 +6,3 @@
     <tr><th></th><td><input type="submit" value="send"></td></tr>
 </form>
 </table>
-

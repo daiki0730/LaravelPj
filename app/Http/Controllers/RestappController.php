@@ -16,7 +16,7 @@ class RestappController extends Controller
 
     public function create()
     {
-        //
+        return view('rest.create');
     }
 
     public function store(Request $request)
