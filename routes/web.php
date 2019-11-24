@@ -55,4 +55,5 @@ Route::resource('rest', 'RestappController');
 Route::get('hello/rest', 'HelloController@rest');
 
 Route::get('hello/session', 'HelloController@ses_get');
+Route::post('hello/session', 'HelloController@ses_put');
 
