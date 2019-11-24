@@ -9,7 +9,8 @@ class RestappController extends Controller
 
     public function index()
     {
-        //
+        $items = Restdata::all();
+        return $items->toArray();
     }
 
     public function create()
