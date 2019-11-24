@@ -25,7 +25,8 @@ class RestappController extends Controller
 
     public function show($id)
     {
-        //
+        $items = Restdata::find($id);
+        return $items->toArray();
     }
 
     public function edit($id)
