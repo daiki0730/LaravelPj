@@ -104,7 +104,7 @@ class HelloController extends Controller
     {
         $msg = $request->input;
         $request->session()->put('msg', $msg);
-        return view('hello.rest');
+        return redirect('hello/session');
     }
 }
 
