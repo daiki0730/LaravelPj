@@ -112,6 +112,12 @@ class HelloController extends Controller
         $request->session()->put('msg', $msg);
         return redirect('hello/session');
     }
+
+    public function getAuth(Request $request)
+    {
+      $param = ['message' => 'ログインしてください'];
+      return view('hello/auth', $param);
+    }
 }
 
 
