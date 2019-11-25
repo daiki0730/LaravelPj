@@ -11,9 +11,10 @@ use App\Person;
 
 class HelloController extends Controller
 {
+
     public function index(Request $request)
     {
-      $sort = $request->sort;
+      $sort = $request->input('name','mail','age');
       $items = Person::orderBy($sort, 'asc')->paginate(5);
       $param = ['items' => $items, 'sort' => $sort];
       return view('hello.index', $param);
