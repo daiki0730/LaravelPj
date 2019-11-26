@@ -6,28 +6,42 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+
 use App\User;
+use App\Person;
 
 class HelloTest extends TestCase
 {
-    use DatabaseMigrations;
+   use DatabaseMigrations;
 
-    public function testHello()
-    {
-          $this->assertTrue(true);
+   public function testHello()
+   {
+       factory(User::class)->create([
+           'name' => 'AAA',
+           'email' => 'BBB@CCC.COM',
+           'password' => 'ABCABC',
+       ]);
+       factory(User::class, 10)->create();
 
-          $response = $this->get('/');
-          $response->assertStatus(200);
+       $this->assertDatabaseHas('users', [
+           'name' => 'AAA',
+           'email' => 'BBB@CCC.COM',
+           'password' => 'ABCABC',
+       ]);
 
-          $response = $this->get('/hello');
-          $response->assertStatus(302);
+       factory(Person::class)->create([
+           'name' => 'XXX',
+           'mail' => 'YYY@ZZZ.COM',
+           'age' => 123,
+       ]);
+       factory(Person::class, 10)->create();
 
-          $user = factory(User::class)->create();
-          $response = $this->actingAs($user)->get('/hello');
-          $response->assertStatus(200);
+       $this->assertDatabaseHas('people', [
+           'name' => 'XXX',
+           'mail' => 'YYY@ZZZ.COM',
+           'age' => 123,
+       ]);
 
-          $response = $this->get('/no_route');
-          $response->assertStatus(404);
-    }
+   }
 }
 
